@@ -20,15 +20,15 @@ export default class RelayRequest {
         `Proxying socket request #${requestId} for "${this.fileName}"`
       );
 
-      this.socket.on("relayResponse.success", (payload: RelayPayload) => {
+      this.socket.once("relayResponse.success", (payload: RelayPayload) => {
         success(payload);
       });
 
-      this.socket.on("relayResponse.fail", err => {
+      this.socket.once("relayResponse.fail", err => {
         fail(err);
       });
 
-      this.socket.on("error", err => fail);
+      this.socket.once("error", err => fail);
 
       this.socket.emit("relayRequest", {
         requestId: requestId,
