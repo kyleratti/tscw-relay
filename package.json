@@ -36,6 +36,6 @@
     "express-ws": "^4.0.0",
     "http-status-codes": "^1.4.0",
     "socket.io": "^2.4.0",
-    "ws": "^7.4.0"
+    "ws": "^7.4.6"
   }
 }
